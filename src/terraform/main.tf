@@ -1,6 +1,6 @@
 resource "aws_instance" "binance-collector" {
     ami           = data.aws_ami.ubuntu.id
-    instance_type = var.instance_type
+    instance_type = "t3.nano"
     subnet_id     = module.vpc.subnet_public_id
     vpc_security_group_ids = [ aws_security_group.ec2-bc.id ]
     associate_public_ip_address = true
